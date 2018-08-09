@@ -21,6 +21,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rubocop', require: false #https://blog-ja.sideci.com/entry/2015/03/12/160441
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
