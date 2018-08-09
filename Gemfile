@@ -13,7 +13,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'devise'
+gem 'devise' #https://qiita.com/cigalecigales/items/73d7bd7ec59a001ccd74
 gem 'pry-byebug'
 
 group :development, :test do
