@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise' #https://qiita.com/cigalecigales/items/73d7bd7ec59a001ccd74
 gem 'pry-byebug'
+gem 'dotenv-rails', groups: [:development, :test]
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
