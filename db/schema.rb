@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_11_122621) do
+ActiveRecord::Schema.define(version: 2018_08_13_073001) do
+
+  create_table "cosmetics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "image_url"
+    t.text "cosmetics_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "item_image", null: false
     t.string "item_name"
     t.text "item_comment", null: false
-    t.integer "item_id"
+    t.integer "cosmetics_id"
     t.integer "user_id"
     t.integer "favorite_id"
     t.integer "comment_id"

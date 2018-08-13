@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :item_image, null: false
       t.string :item_name
       t.text :item_comment, null: false
-      t.integer :item_id
+      t.integer :cosmetics_id
       t.integer :user_id
       t.integer :favorite_id
       t.integer :comment_id
