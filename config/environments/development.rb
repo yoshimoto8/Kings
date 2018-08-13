@@ -61,8 +61,8 @@ Rails.application.configure do
 
   #Amazon
   Amazon::Ecs.options = {
-      associate_tag: ENV['ASSOCIATE_TAG']
-      AWS_access_key_id: ENV['AWS_ACCESS_KEY_ID']
-      AWS_secret_key: ENV['AWS_SECRET_KEY']'RsD+l+dCgqvwqpf9rqKQw2C3oJ5IYrEV/+5Fitcl'
+      associate_tag: ENV['ASSOCIATE_TAG'],
+      AWS_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      AWS_secret_key: ENV['AWS_SECRET_KEY'],
   }
 end

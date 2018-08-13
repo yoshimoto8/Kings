@@ -1,4 +1,4 @@
-class Cosmeticses
+class Cosmetics
   attr_accessor :title, :image_url, :url
   def initialize(args)
     @title = args[:title]
