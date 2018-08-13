@@ -1,7 +1,7 @@
 class CosmeticsesController < ApplicationController
   def search
     if params[:keyword].present?
-      Amazon::Ecs.debug = true
+      Amazon::Ecs.debug = false
       items = Amazon::Ecs.item_search(
         params[:keyword],
         search_index:  'HealthPersonalCare',
@@ -19,6 +19,7 @@ class CosmeticsesController < ApplicationController
         }
         @search_items << Cosmetics.new(args)
       end
+      # @search_items.page(params[:page]).per(10)
     end
   end
 end
