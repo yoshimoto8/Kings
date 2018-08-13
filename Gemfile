@@ -16,6 +16,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 #J
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+#K
+gem 'kaminari'
 #M
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 #U
