@@ -1,3 +1,21 @@
 // Place all the styles related to the reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.create-page {
+  background-color: #fff;
+  height: 1000px;
+  margin: 30px 0;
+  .create-page__box {
+    display: flex;
+    flex-direction: row;
+  }
+  .create-page__box__image {
+    height: 150px;
+    width: 150px;
+  }
+  .create-page__box__title {
+    height: 150px;
+    width: 100%;
+  }
+}

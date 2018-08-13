@@ -17,7 +17,7 @@ class CosmeticsesController < ApplicationController
           image_url: item.get('LargeImage/URL'),
           url: item.get('DetailPageURL')
         }
-        @search_items << Cosmetics.new(args)
+        @search_items << Amazon_search.new(args)
       end
       # @search_items.page(params[:page]).per(10)
     end
