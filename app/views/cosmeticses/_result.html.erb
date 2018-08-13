@@ -1,10 +1,15 @@
-<% if @search_items.present? %>
-  <% @search_items.each do |item| %>
-    <div class="list">
-      <% if item.image_url.present? %>
-        <%= link_to (image_tag(item.image_url, style: "width: 70px;height: 100px;display: inline-block;")), item.url %>
-      <% end %>
-      <%= item.title %>
-    </div>
+<div class="cusmetics-search__results">
+  <% if @search_items.present? %>
+    <% @search_items.each do |item| %>
+      <div class="cusmetics-search__results__box card">
+        <div class="cusmetics-search__results__box__iamge">
+          <% if item.image_url.present? %>
+            <%= image_tag(item.image_url, style: "width: 70px;height:100px;display: inline-block;", class: "card-img-top", alt: "Card image cap") %>
+          <% end %>
+        </div>
+        <h6 class="card-title cusmetics-search__results__box__item"><%= item.title %></h6>
+        <%= link_to "Go to Amazon", item.url, { :class => "btn btn-primary cusmetics-search__results__box__link" } %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
