@@ -7,28 +7,27 @@
       <%= @item_title %>
     </h5>
   </div>
-  <form>
+  <%= form_for(@review, url: reviews_create_path) do |f| %>
     <div class="form-group">
-      <label for="exampleInputEmail1">タイトル</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <%= f.label :title, 'タイトル' %>
+      <br>
+      <%= f.text_field :title, :class => 'form-control' %>
     </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-      <label class="form-check-label" for="inlineCheckbox1">1</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-      <label class="form-check-label" for="inlineCheckbox2">2</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-      <label class="form-check-label" for="inlineCheckbox3">3</label>
-    </div>
+    <br>
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">説明文</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <%= f.label :reviews_valuation, '評価' %>
+      <% Review.points.keys.each do |point|%>
+        <%= f.radio_button :reviews_valuation, point %> <%= Review.points[point] %>
+      <% end %>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    <br>
+    <div class="form-group">
+      <%= f.label :item_comment, 'コメント' %>
+      <%= f.text_area :item_comment, :class => 'form-control' %>
+    </div>
+    <%= f.hidden_field :item_image_url, value: @item_image_url %>
+    <%= f.hidden_field :item_title, value: @item_title %>
+    <%= f.submit 'レビューを作成する', :class => "btn btn-primary" %>
+  <% end %>
 </div>
 
