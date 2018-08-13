@@ -1,3 +1,27 @@
 .cusmetics-search {
-  margin: 0 100px;
+  text-align: center;
+  .cusmetics-search__results {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .cusmetics-search__results__box {
+      margin: 10px;
+      width: 250px;
+      height: 300px;
+      .cusmetics-search__results__box__iamge {
+        text-align: center;
+        margin: 0 auto;
+        height: 100px;
+        padding: 10px 0;
+      }
+      .cusmetics-search__results__box__item {
+        padding: 30px 0;
+        height: 130px;
+      }
+      .cusmetics-search__results__box__link {
+        margin: 0 20px;
+      }
+    }
+  }
 }
