@@ -13,8 +13,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    #リファクタリングしたし 
-    @review = get_review_params
+    @review = current_user.reviews.build(get_review_params.hash)
     if @review.save
       redirect_to root_url
     else
@@ -25,14 +24,7 @@ class ReviewsController < ApplicationController
   private
 
   def get_review_params
-    return set_review_params(params.require(:review).permit(:title, :reviews_valuation, :item_comment, :item_image_url, :item_title))
-  end
-
-  def set_review_params(review_params)
-    point = point(review_params[:reviews_valuation])
-    cosmetic = Cosmetic.find_by(title: review_params[:item_title]).id
-    current_user.reviews.build(cosmetics_id: cosmetic, reviews_valuation: point, title: review_params[:title], item_comment: review_params[:item_comment],
-                               item_image: review_params[:item_image_url], item_name: review_params[:item_title])
+    return Review_parameter.new(params.require(:review).permit(:title, :reviews_valuation, :item_comment, :item_image_url, :item_title))
   end
 
   def point(point)
