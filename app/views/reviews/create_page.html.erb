@@ -15,6 +15,12 @@
     </div>
     <br>
     <div class="form-group">
+      <%= f.label :review_image, 'イメージ' %>
+      <br>
+      <%= f.file_field :review_image %>
+    </div>
+    <br>
+    <div class="form-group">
       <%= f.label :reviews_valuation, '評価' %>
       <% Review.points.keys.each do |point|%>
         <%= f.radio_button :reviews_valuation, point %> <%= Review.points[point] %>
