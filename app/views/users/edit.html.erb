@@ -1,0 +1,27 @@
+<div class="user-edit">
+  <%= form_for @user, :url => {:action => 'update'} do |f| %>
+    <div class="form-group">
+      <%= f.label :first_name, '苗字' %>
+      <%= f.text_field :first_name, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :last_name, '名前' %>
+      <%= f.text_field :last_name, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :nick_name, 'ニックネーム' %>
+      <%= f.text_field :nick_name, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :age, '年齢' %>
+      <%= f.text_field :age, :class => 'form-control' %>
+    </div>
+    <div class="form-group">
+      <% User.genders.keys.each do |gender|%>
+        <%= f.radio_button :gender, gender %> <%= User.genders[gender] == 1 ? "男" : "女" %>
+      <% end %>
+    </div>
+    <%= f.hidden_field :id, value: @user.id %>
+    <%= f.submit '登録する', :class => "btn btn-primary" %>
+  <% end %>
+</div>
