@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :top
+  root 'top#index'
   post '/reviews/create_page', to: 'reviews#create_page'
   post '/reviews/create', to: 'reviews#create'
   get '/cosmeticses/search', to: 'cosmeticses#search'
