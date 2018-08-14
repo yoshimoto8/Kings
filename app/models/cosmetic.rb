@@ -1,4 +1,6 @@
 class Cosmetic < ApplicationRecord
+  has_many :reviews
+
   def insert_item(search_items)
     search_items.each do |item|
       if already_inserted_db?(item[:url])
