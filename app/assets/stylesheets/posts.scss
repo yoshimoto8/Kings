@@ -1,0 +1,23 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.posts-index {
+  .posts-index__box {
+    width: 900px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .posts-index__box__card {
+      margin: 10px;
+      .posts-index__box__card_user {
+        display: flex;
+        flex-direction: row;
+        .posts-index__box__card_user__image {
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+  }
+}

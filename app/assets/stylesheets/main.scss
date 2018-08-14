@@ -3,4 +3,9 @@ body {
 }
 .body {
   margin: 0 100px;
+  display: flex;
+  flex-direction: "row";
+  .sidebar {
+    width: 240px;
+  }
 }
