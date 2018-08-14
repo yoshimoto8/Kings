@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   private
 
   def get_user_detail_params
-    params.require(:user).permit(:first_name, :last_name, :nick_name, :age, :gender)
+    params.require(:user).permit(:image, :image_cache, :first_name, :last_name, :nick_name, :age, :gender)
   end
 end

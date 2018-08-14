@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {
-    :sessions      => "users/sessions",
-    :registrations => "users/registrations",
-    :passwords     => "users/passwords"
-  }
+  devise_for :users
   root 'top#index'
   resources :users, :only => [:show, :update, :edit]
   post '/reviews/create_page', to: 'reviews#create_page'

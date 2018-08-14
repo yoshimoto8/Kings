@@ -1,6 +1,11 @@
 <div class="user-edit">
   <%= form_for @user, :url => {:action => 'update'} do |f| %>
     <div class="form-group">
+      <%= f.label :image %><br />
+      <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+    <div class="form-group">
       <%= f.label :first_name, '苗字' %>
       <%= f.text_field :first_name, :class => 'form-control' %>
     </div>

@@ -1,4 +1,8 @@
-<div>
-  <div>
+<div class="users-show">
+  <div class="users-show__profile">
+    <%= image_tag @user.image.url, class: "img-thumbnail users-show__profile__image" %>
+    <div class="users-show__profile__box">
+      <h2><%= @user.nick_name %></h2>
+    </div>
   </div>
 </div>

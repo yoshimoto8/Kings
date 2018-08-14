@@ -10,6 +10,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 #C
 gem 'coffee-rails', '~> 4.2'
+gem 'carrierwave'
 #D
 gem 'devise' #https://qiita.com/cigalecigales/items/73d7bd7ec59a001ccd74
 gem 'dotenv-rails', groups: [:development, :test]
@@ -20,6 +21,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 #M
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+gem 'mini_magick'
 #U
 gem 'uglifier', '>= 1.3.0'
 #T
@@ -32,7 +34,6 @@ gem 'rails', '~> 5.2.0'
 #P
 gem 'pry-byebug'
 gem 'puma', '~> 3.11'
-
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
