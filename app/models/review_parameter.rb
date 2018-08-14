@@ -7,12 +7,13 @@ class Review_parameter
     @item_comment = args[:item_comment]
     @item_image = args[:item_image_url]
     @item_name = args[:item_title]
+    @review_image = args[:review_image]
   end
 
   def hash
     {reviews_valuation: @reviews_valuation, cosmetics_id: @cosmetics_id,
      title: @title, item_comment: @item_comment, item_image: @item_image,
-     item_name: @item_name}
+     item_name: @item_name, review_image: @review_image}
   end
 
   private

@@ -2,7 +2,7 @@
   <div class="posts-index__box">
     <% @reviews.each do |review| %>
       <div class="card posts-index__box__card" style="width: 16rem;">
-        <%= image_tag(review.item_image, class: "card-img-top") %>
+        <%= image_tag(review.review_image.url, class: "card-img-top") %>
         <div class="posts-index__box__card_user">
           <%= image_tag(review.user.image.url, class: "card-img-top posts-index__box__card_user__image") %>
           <p class="card-text"><%= review.user.nick_name %></p>
@@ -10,9 +10,9 @@
         <div class="card-body">
           <p class="card-text"><%= review.item_comment %></p>
         </div>
-        <div class="card-body">
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+        <div class="posts-index__box__item">
+          <%= image_tag(review.item_image, class: "card-img-top posts-index__box__item__image") %>
+          <%= review.title %>
         </div>
       </div>
     <% end %>

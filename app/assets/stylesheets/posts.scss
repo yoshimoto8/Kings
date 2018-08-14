@@ -18,6 +18,15 @@
           width: 50px;
         }
       }
+
+      .posts-index__box__item {
+        display: flex;
+        flex-direction: row;
+        .posts-index__box__item__image {
+          height: 50px;
+          width: 50px;
+        }
+      }
     }
   }
 }

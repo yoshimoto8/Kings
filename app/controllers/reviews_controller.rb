@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
   private
 
   def get_review_params
-    return Review_parameter.new(params.require(:review).permit(:title, :reviews_valuation, :item_comment, :item_image_url, :item_title))
+    return Review_parameter.new(params.require(:review).permit(:title, :reviews_valuation, :item_comment, :item_image_url, :item_title, :review_image))
   end
 
   def point(point)
