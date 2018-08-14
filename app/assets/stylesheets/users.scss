@@ -1,0 +1,12 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users-show__profile {
+  display: flex;
+  flex-direction: row;
+  .users-show__profile__image {
+    height: 300px;
+    width: 300px;
+  }
+}
