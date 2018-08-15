@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
    @user = User.find(params[:id])
-   if @user.is_registrated_user_detail?
+   if @user == current_user && @user.is_registrated_user_detail?
     redirect_to "/users/#{@user.id}/edit"
    end
   end

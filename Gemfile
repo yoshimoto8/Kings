@@ -31,6 +31,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'sass-rails', '~> 5.0'
 #R
 gem 'rails', '~> 5.2.0'
+gem 'jquery-rails'
 #P
 gem 'pry-byebug'
 gem 'puma', '~> 3.11'
