@@ -8,6 +8,7 @@ class Review_parameter
     @item_image = args[:item_image_url]
     @item_name = args[:item_title]
     @review_image = args[:review_image]
+    @cosmetics_url = args[:cosmetics_url]
   end
 
   def hash

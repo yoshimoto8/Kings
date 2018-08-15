@@ -1,12 +1,10 @@
 class Cosmetic < ApplicationRecord
   has_many :reviews
 
-  def insert_item(search_items)
-    search_items.each do |item|
-      if already_inserted_db?(item[:url])
-        Cosmetic.create(title: item[:title], image_url: item[:image_url], cosmetics_url: item[:url])
-        logger.debug("#{item[:url]}を保存しました。")
-      end
+  def insert_item(review)
+    if already_inserted_db?(review[:url])
+      Cosmetic.create(title: review[:title], image_url: review[:image_url], cosmetics_url: review[:url])
+      logger.debug("#{review[:url]}を保存しました。")
     end
   end
 
