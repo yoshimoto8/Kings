@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_08_13_073001) do
     t.string "review_image"
     t.text "item_comment", null: false
     t.integer "reviews_valuation"
-    t.integer "cosmetics_id"
+    t.integer "cosmetic_id"
     t.integer "user_id"
     t.integer "favorite_id"
     t.integer "comment_id"
