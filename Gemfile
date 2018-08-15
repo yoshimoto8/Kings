@@ -34,6 +34,8 @@ gem 'rails', '~> 5.2.0'
 #P
 gem 'pry-byebug'
 gem 'puma', '~> 3.11'
+#W
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
