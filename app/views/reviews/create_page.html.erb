@@ -21,6 +21,13 @@
     </div>
     <br>
     <div class="form-group">
+      <%= f.fields_for @category do |category| %>
+        <%= category.label :name, "カテゴリー" %><br>
+        <%= category.text_field :name %>
+      <% end %>
+    </div>
+    <br>
+    <div class="form-group">
       <%= f.label :reviews_valuation, '評価' %>
       <% Review.points.keys.each do |point|%>
         <%= f.radio_button :reviews_valuation, point %> <%= Review.points[point] %>
