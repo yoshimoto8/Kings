@@ -1,5 +1,7 @@
 class Cosmetic < ApplicationRecord
   has_many :reviews
+  has_many :cosmetic_categories, dependent: :destroy
+  has_many :categories, through: :cosmetic_categories
 
   def insert_item(review)
     if already_inserted_db?(review[:url])
