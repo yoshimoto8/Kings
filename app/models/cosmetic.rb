@@ -1,4 +1,5 @@
 class Cosmetic < ApplicationRecord
+  include SaveCategory
   has_many :reviews
   has_many :cosmetic_categories, dependent: :destroy
   has_many :categories, through: :cosmetic_categories

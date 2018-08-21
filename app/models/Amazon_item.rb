@@ -1,5 +1,6 @@
 class Amazon_item
   attr_reader :keyword
+  
   def initialize(keyword)
     @keyword = keyword
   end

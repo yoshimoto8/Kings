@@ -16,11 +16,11 @@ class ReviewsController < ApplicationController
 
   def create
     review = get_review_params
-    @review = current_user.reviews.build(review_parameter(review).hash)
     category_list = review[:category][:name].split(",")
+    @review = current_user.reviews.build(review_parameter(review).hash)
     if @review.save
-      # Cosmetic.new.insert_item(review_parameter(review).hash)
       @review.save_categories(category_list)
+      @review.cosmetic.save_categories(category_list)
       redirect_to root_url
     else
       redirect_to root_url
