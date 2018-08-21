@@ -14,7 +14,7 @@
           <p class="card-text"><%= review.item_comment %></p>
         </div>
         <div class="posts-index__box__item">
-          <%= image_tag(review.item_image, class: "card-img-top posts-index__box__item__image") %>
+          <%= image_tag(review.item_image, class: "card-img-top posts-index__box__item__image") if review.item_image.present? %>
           <div>
             <%= review.title %>
             <%= review.cosmetic.valuation_average %>
