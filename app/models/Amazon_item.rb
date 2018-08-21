@@ -1,4 +1,5 @@
 class Amazon_item
+  attr_reader :keyword
   def initialize(keyword)
     @keyword = keyword
   end
@@ -6,7 +7,7 @@ class Amazon_item
   def search_item
     Amazon::Ecs.debug = false
     items = Amazon::Ecs.item_search(
-      @keyword,
+      keyword,
       search_index:  'HealthPersonalCare',
       dataType: 'script',
       response_group: 'ItemAttributes, Images',
