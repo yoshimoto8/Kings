@@ -19,9 +19,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.build(review_parameter(review).hash)
     category_list = review[:category][:name].split(",")
     if @review.save
-      # @cosmetic = Cosmetic.new
-      # @cosmetic.insert_item(cosmetics_hash(review))
-      # @cosmetic.save_categories(category_list)
+      # Cosmetic.new.insert_item(review_parameter(review).hash)
       @review.save_categories(category_list)
       redirect_to root_url
     else
@@ -32,7 +30,7 @@ class ReviewsController < ApplicationController
   private
 
   def get_review_params
-    params.require(:review).permit(:title, {category: [:name]}, :reviews_valuation, :item_comment, :item_image_url, :item_title, :review_image, :cosmetics_url)
+    params.require(:review).permit(:title, { category: [ :name ] }, :reviews_valuation, :item_comment, :item_image_url, :item_title, :review_image, :cosmetics_url)
   end
 
   def cosmetics_hash(review)
