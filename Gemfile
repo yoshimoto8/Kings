@@ -5,6 +5,7 @@ ruby '2.5.1'
 
 #A
 gem 'amazon-ecs'
+gem 'acts-as-taggable-on', '~> 6.0'
 #B
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
@@ -17,6 +18,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 #J
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 #K
 gem 'kaminari'
 #M
