@@ -1,5 +1,37 @@
 AllCops:
+  TargetRubyVersion: 2.5.1
   RunRailsCops: true
+  Include:
+  - '**/Rakefile'
+  - '**/config.ru'
   Exclude:
-    - db/schema.rb
-    - "vendor/**/*"
+  - 'db/**/*'
+  - 'config/**/*'
+  - 'script/**/*'
+  - !ruby/regexp /old_and_unused\.rb$/
+
+  # permit to difine module::classname
+  ClassAndModuleChildren:
+    Enabled: false
+
+  # permit to use 'and','or'
+  AndOr:
+    Enabled: false
+
+  BlockNesting:
+    Max: 5
+
+  ClassLength:
+    Enabled: false
+
+  CyclomaticComplexity:
+    Enabled: false
+
+  LineLength:
+    Enabled: false
+
+  MethodLength:
+    Enabled: false
+
+  ParameterLists:
+    Max: 12
