@@ -1,13 +1,13 @@
 <div class="create-page">
   <div class="create-page__box">
     <div class="create-page__box__image">
-      <%= image_tag(@item_image_url, class: "card-img-top", alt: "Card image cap") %>
+      <%= image_tag(@review_model.item_image_url, class: "card-img-top", alt: "Card image cap") %>
     </div>
     <h5 class="create-page__box__title">
-      <%= @item_title %>
+      <%= @review_model.item_title %>
     </h5>
   </div>
-  <%= form_for(@review, url: reviews_create_path) do |f| %>
+  <%= form_for(@review_model.review, url: reviews_create_path) do |f| %>
     <div class="form-group">
       <%= f.label :title, 'タイトル' %>
       <br>
@@ -21,7 +21,7 @@
     </div>
     <br>
     <div class="form-group">
-      <%= f.fields_for @category do |category| %>
+      <%= f.fields_for @review_model.category do |category| %>
         <%= category.label :name, "カテゴリー" %><br>
         <%= category.text_field :name %>
       <% end %>
@@ -30,7 +30,7 @@
     <div class="form-group">
       <%= f.label :reviews_valuation, '評価' %>
       <% Review.points.keys.each do |point|%>
-        <%= f.radio_button :reviews_valuation, point %> <%= Review.points[point] %>
+        <%= f.radio_button :reviews_valuation, point %> <% Review.points[point] %>
       <% end %>
     </div>
     <br>
@@ -38,9 +38,9 @@
       <%= f.label :item_comment, 'コメント' %>
       <%= f.text_area :item_comment, :class => 'form-control' %>
     </div>
-    <%= f.hidden_field :item_image_url, value: @item_image_url %>
-    <%= f.hidden_field :item_title, value: @item_title %>
-    <%= f.hidden_field :cosmetics_url, value: @cosmetics_url %>
+    <%= f.hidden_field :item_image_url, value: @review_model.item_image_url %>
+    <%= f.hidden_field :item_title, value: @review_model.item_title %>
+    <%= f.hidden_field :cosmetics_url, value: @review_model.cosmetics_url %>
     <%= f.submit 'レビューを作成する', :class => "btn btn-primary" %>
   <% end %>
 </div>

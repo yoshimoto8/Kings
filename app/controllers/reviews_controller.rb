@@ -3,12 +3,7 @@ class ReviewsController < ApplicationController
 
   def create_page
     if user_signed_in?
-      #この変もしたし
-      @item_title = params[:item_title]
-      @item_image_url = params[:item_image]
-      @cosmetics_url = params[:cosmetics_url]
-      @review = Review.new
-      @category = Category.new
+      @review_model = NewReviewModel.new(params)
     else
       redirect_to "/users/sign_in"
     end
