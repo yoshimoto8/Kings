@@ -42,11 +42,14 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
   gem 'rubocop', require: false #https://blog-ja.sideci.com/entry/2015/03/12/160441
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '>= 3.3.0'z
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
