@@ -13,13 +13,15 @@ class ReviewsController < ApplicationController
     review = get_review_params
     category_list = review[:category][:name].split(",")
     @review = current_user.reviews.build(review_parameter(review).hash)
-    if @review.save
+
+    ActiveRecord::Base.transaction do
+      @review.save
       @review.save_categories(category_list)
       @review.cosmetic.save_categories(category_list)
-      redirect_to root_url
-    else
-      redirect_to root_url
     end
+      redirect_to root_url
+    rescue => e
+      redirect_to root_url
   end
 
   private
