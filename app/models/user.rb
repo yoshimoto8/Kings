@@ -3,12 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
   has_many :reviews
   mount_uploader :image, ImageUploader
   enum genders: { man: 1, women: 2 }
 
+  #？あるからisいらない
   def is_registrated_user_detail?
+    #？あるからisいらない
     if is_user_parameter_nil?
       return true
     end
@@ -18,6 +19,7 @@ class User < ApplicationRecord
 
   private
 
+  #？あるからisいらない
   def is_user_parameter_nil?
     first_name.nil? || last_name.nil? || nick_name.nil? || age.nil? || gender.nil?
   end

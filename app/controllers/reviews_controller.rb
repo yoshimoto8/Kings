@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
 
   def create
     review = get_review_params
+    #↓メソット化する
     category_list = review[:category][:name].split(",")
     @review = current_user.reviews.build(review_parameter(review).hash)
 
